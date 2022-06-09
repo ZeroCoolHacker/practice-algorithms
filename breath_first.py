@@ -8,7 +8,7 @@ class Node:
         return self.value
         
 
-    def depth_first_traversal(self):
+    def breadth_first_traversal(self):
         queue = [self]
         results = []
         while queue:
@@ -17,6 +17,8 @@ class Node:
             if current.left: queue.append(current.left)
             if current.right: queue.append(current.right)
         return results
+    
+    
 
 d = Node('d')
 e = Node('e')
@@ -25,4 +27,4 @@ f = Node('f')
 c = Node('c', right=f)
 a = Node('a', left=b, right=c)
 
-print(a.depth_first_traversal())
+print(a.breadth_first_traversal())
